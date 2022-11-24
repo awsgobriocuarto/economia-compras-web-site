@@ -3,6 +3,8 @@ import Link from 'next/link';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import Image from 'next/image';
+import Logo from '../assets/logo-economia.svg';
 
 const links = [
   { title: 'Home', path: '/' },
@@ -26,11 +28,13 @@ function Menu() {
     <Navbar bg="light" variant="light" expand="lg" sticky="top" collapseOnSelect>
       <Container>
         <Link href="/">
-          <a className="navbar-brand">Compras Web</a>
+          <a className="navbar-brand">
+            <Image src={Logo} alt="logo economia" />
+          </a>
         </Link>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+        <Navbar.Toggle aria-controls="menu" />
+        <Navbar.Collapse id="menu">
+          <Nav className="ms-auto">
             {links.map((link, index) => (
               <MenuItem {...link} key={index} />
             ))}

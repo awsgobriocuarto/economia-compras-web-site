@@ -4,7 +4,7 @@ import Link from 'next/link';
 function NewsCard({ post }) {
   // console.log(post);
   return (
-    <Card className="mb-3 text-start">
+    <Card className="mb-3">
       <Card.Img variant="top" src={`https://via.placeholder.com/600x300.png`} />
       <Card.Body>
         <Card.Title>{post.title}</Card.Title>

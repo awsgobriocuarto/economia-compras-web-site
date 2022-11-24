@@ -1,49 +1,22 @@
-import NewsCard from '@components/NewsCard';
+import CtaProvider from '@components/CtaProvider';
+import ListOfBanners from '@components/ListOfBanners';
+import PostsLatest from '@components/PostsLatest';
 import Slides from '@components/Slides';
-import Link from 'next/link';
+import getListItems from '@services/getListItems';
+import Head from 'next/head';
 
-const buttons = [
-  { id: 1, title: 'Cotizaciones y Concursos', path: '/cotizaciones-y-concursos' },
-  { id: 2, title: 'proveedores', path: '/proveedores' },
-  { id: 3, title: 'normativa', path: '/normativa' },
-];
-const posts = [
-  { id: 1, title: 'post 1', path: './novedades/rio-cuarto-integrara-la-mesa-directiva-de-la-red-argentina-del-pacto-global-1666912216?id=114' },
-  { id: 2, title: 'post 2', path: './novedades/rio-cuarto-integrara-la-mesa-directiva-de-la-red-argentina-del-pacto-global-1666912216?id=114' },
-  { id: 3, title: 'post 3', path: './novedades/rio-cuarto-integrara-la-mesa-directiva-de-la-red-argentina-del-pacto-global-1666912216?id=114' },
-  { id: 4, title: 'post 4', path: './novedades/rio-cuarto-integrara-la-mesa-directiva-de-la-red-argentina-del-pacto-global-1666912216?id=114' },
-];
-export default function Home() {
+export default function Home({ items }) {
+  //console.log(items);
   return (
     <>
+      <Head>
+        <title>Compras Web | Sec. de Economía Río Cuarto</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Slides />
-      <div className="container">
-        <div className="text-center py-5 mb-5">
-          <div className="row">
-            {buttons.map((button) => (
-              <div key={button.id} className="col-md-4">
-                <Link href={button.path}>
-                  <a className="btn btn-link p-0 mb-4">
-                    <img src={`https://via.placeholder.com/800x300.png?text=${button.title}`} alt={button.title} className="img-fluid" />
-                  </a>
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-      <div className="container">
-        <h3>novedades</h3>
-        <div className="text-center py-5 mb-5">
-          <div className="row">
-            {posts.map((post) => (
-              <div key={post.id} className="col-md-3">
-                <NewsCard post={post} />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+      <ListOfBanners items={items} />
+      <CtaProvider />
+      <PostsLatest limit={4} />
       <div className="bg-light text-center py-5 mb-5">
         <div className="container">
           <h3>contacto</h3>
@@ -58,4 +31,16 @@ export default function Home() {
       </div>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQa6arjSPTARv_IvyKV7idSiLjb0DnOx48ewD0qvwuRlxEuu86yDYYdfn1aENbhj0ooIk9gsCoSL4d2/pub?output=csv';
+  const response = await getListItems.list({ url });
+  const items = response.filter((i) => i.page.toLowerCase().includes('home'));
+  return {
+    props: {
+      items,
+    },
+    revalidate: 1,
+  };
 }

@@ -1,42 +1,45 @@
+import { useSlides } from 'hooks/useSlides';
 import Link from 'next/link';
+import { Placeholder } from 'react-bootstrap';
 import Carousel from 'react-bootstrap/Carousel';
 
 function Slides() {
+  const { slides, loading } = useSlides();
+  // console.log(slides);
   return (
-    <Carousel>
-      <Carousel.Item>
-        <img className="d-block w-100" src="https://via.placeholder.com/1920x500.png" alt="First slide" />
-        <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          <Link href="/normativa">
-            <a className="btn btn-outline-primary mt-1 mb-3">Ver más</a>
-          </Link>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img className="d-block w-100" src="https://via.placeholder.com/1920x500.png" alt="Second slide" />
-
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <Link href="/normativa">
-            <a className="btn btn-outline-primary mt-1 mb-3">Ver más</a>
-          </Link>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img className="d-block w-100" src="https://via.placeholder.com/1920x500.png" alt="Third slide" />
-
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-          <Link href="/normativa">
-            <a className="btn btn-outline-primary mt-1 mb-3">Ver más</a>
-          </Link>
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel>
+    <>
+      {loading ? (
+        <Carousel>
+          <Carousel.Item>
+            <img className="d-block w-100" src="https://via.placeholder.com/1920x500.png" alt="First slide" className="carousel-img placeholder" />
+            <Placeholder as={Carousel.Caption} animation="glow">
+              <h3>
+                <Placeholder xs={4} />
+              </h3>
+              <p className="text-dark">
+                <Placeholder variant="gray" xs={7} />
+              </p>
+              <Placeholder.Button variant="primary" xs={1} />
+            </Placeholder>
+          </Carousel.Item>
+        </Carousel>
+      ) : (
+        <Carousel>
+          {slides.map((slide) => (
+            <Carousel.Item key={slide.id}>
+              <img className="d-block w-100" src={slide.file} alt={slide.title} className="carousel-img" />
+              <Carousel.Caption>
+                <h3>{slide.title}</h3>
+                <p>{slide.summary}</p>
+                <Link href="/normativa">
+                  <a className="btn btn-primary mt-1 mb-3">Ver más</a>
+                </Link>
+              </Carousel.Caption>
+            </Carousel.Item>
+          ))}
+        </Carousel>
+      )}
+    </>
   );
 }
 
