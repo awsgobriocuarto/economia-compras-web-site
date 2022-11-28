@@ -6,12 +6,12 @@ export default function Proveedores({ items }) {
   return (
     <section>
       <div className="container">
-        <h1 className="mb-5 mt-3">Proveedores</h1>
-        <div className="row mb-5">
+        <h1>Proveedores</h1>
+        <div className="row">
           <ListOfBanners items={items} />
         </div>
+        <CtaProvider />
       </div>
-      <CtaProvider />
     </section>
   );
 }

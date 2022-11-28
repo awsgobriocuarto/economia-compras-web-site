@@ -10,6 +10,11 @@ body {
 
 section {
   padding: 40px 0;
+  h1 {
+    font-size: 2rem;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
 }
 
 h1,
@@ -18,7 +23,6 @@ h3 {
   text-transform: uppercase;
   // text-align: center;
   // font-weight: 300;
-  letter-spacing: 0.4rem;
+  letter-spacing: 0.2rem;
   color: $primary;
-  margin-bottom: 10px;
 }

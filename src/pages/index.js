@@ -15,7 +15,9 @@ export default function Home({ items }) {
       </Head>
       <Slides />
       <ListOfBanners items={items} />
-      <CtaProvider />
+      <div className="container">
+        <CtaProvider />
+      </div>
       <PostsLatest limit={4} />
       <div className="bg-light text-center py-5 mb-5">
         <div className="container">

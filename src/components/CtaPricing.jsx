@@ -1,13 +1,13 @@
-export default function CtaProvider() {
+export default function CtaPricing() {
   return (
     <div className="cta secondary">
       <div>
-        <h3>¿Querés ser proveedor?</h3>
-        <p className="lead d-none d-sm-block">Registrate a nuestra red de proveedores y participá de los concurso de precios y licitaciones</p>
+        <h3 className="mb-3 mb-sm-0">¿Querés participar?</h3>
+        <p className="lead d-none d-sm-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, perspiciatis!</p>
       </div>
       <div>
         <a className="btn btn-primary text-white text-uppercase" href="http://cidi.riocuarto.gov.ar/" target="_blank" rel="noopener noreferrer">
-          Registrate Ahora
+          Más Información
         </a>
       </div>
     </div>

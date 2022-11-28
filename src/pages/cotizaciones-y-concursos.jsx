@@ -1,3 +1,4 @@
+import CtaPricing from '@components/CtaPricing';
 import ListOfBanners from '@components/ListOfBanners';
 import getListItems from '@services/getListItems';
 import Link from 'next/link';
@@ -6,15 +7,11 @@ export default function CotizacionesConcursos({ items }) {
   return (
     <section>
       <div className="container">
-        <h1 className="mb-5 mt-3">Cotizaciones y Concursos</h1>
-        <div className="row mb-5">
+        <h1>Cotizaciones y Concursos</h1>
+        <div className="row">
           <ListOfBanners items={items} />
         </div>
-        <Link href="https://economiariocuarto.gob.ar/">
-          <a target="_blank" rel="noopener noreferrer" className="btn btn-ls btn-primary">
-            ¿Querés Participar?
-          </a>
-        </Link>
+        <CtaPricing />
       </div>
     </section>
   );

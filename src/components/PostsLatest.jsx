@@ -20,7 +20,7 @@ export default function PostsLatest({ limit }) {
     <section className="posts">
       <div className="container">
         <h3>novedades</h3>
-        <div className="row mb-5">
+        <div className="row">
           {loading ? (
             <>
               <PostCardPlaceholder />

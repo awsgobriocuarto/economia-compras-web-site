@@ -5,7 +5,7 @@ export default function Normativa({ items }) {
   return (
     <section>
       <div className="container">
-        <h1 className="mb-5 mt-3">Normativa</h1>
+        <h1>Normativa</h1>
         <div className="row mb-5">
           <ListOfBanners items={items} />
         </div>

@@ -29,7 +29,7 @@ function Slides() {
             <Carousel.Item key={slide.id}>
               <img className="d-block w-100" src={slide.file} alt={slide.title} className="carousel-img" />
               <Carousel.Caption>
-                <h3>{slide.title}</h3>
+                <h3 className="text-white">{slide.title}</h3>
                 <p>{slide.summary}</p>
                 <Link href="/normativa">
                   <a className="btn btn-primary mt-1 mb-3">Ver más</a>

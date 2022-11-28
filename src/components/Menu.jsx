@@ -29,7 +29,7 @@ function Menu() {
       <Container>
         <Link href="/">
           <a className="navbar-brand">
-            <Image src={Logo} alt="logo economia" />
+            <Image src={Logo} alt="logo economia" priority={'low'} />
           </a>
         </Link>
         <Navbar.Toggle aria-controls="menu" />
