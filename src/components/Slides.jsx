@@ -11,7 +11,7 @@ function Slides() {
       {loading ? (
         <Carousel>
           <Carousel.Item>
-            <img className="d-block w-100" src="https://via.placeholder.com/1920x500.png" alt="First slide" className="carousel-img placeholder" />
+            <img src="https://via.placeholder.com/1920x500.png" alt="First slide" className="carousel-img placeholder" />
             <Placeholder as={Carousel.Caption} animation="glow">
               <h3>
                 <Placeholder xs={4} />
@@ -27,7 +27,7 @@ function Slides() {
         <Carousel>
           {slides.map((slide) => (
             <Carousel.Item key={slide.id}>
-              <img className="d-block w-100" src={slide.file} alt={slide.title} className="carousel-img" />
+              <img src={slide.file} alt={slide.title} className="carousel-img" />
               <Carousel.Caption>
                 <h3 className="text-white">{slide.title}</h3>
                 <p>{slide.summary}</p>

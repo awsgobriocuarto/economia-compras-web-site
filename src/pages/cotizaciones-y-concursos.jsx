@@ -1,7 +1,6 @@
 import CtaPricing from '@components/CtaPricing';
 import ListOfBanners from '@components/ListOfBanners';
 import getListItems from '@services/getListItems';
-import Link from 'next/link';
 
 export default function CotizacionesConcursos({ items }) {
   return (
