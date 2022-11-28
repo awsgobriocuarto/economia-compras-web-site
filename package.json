@@ -1,5 +1,5 @@
 {
-  "name": "cliente-validarsa-landing-gestionplay",
+  "name": "grc-compras-web",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,13 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "bootstrap": "^5.2.1",
+    "axios": "^1.1.3",
+    "bootstrap": "^5.2.2",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-prettier": "^4.2.1",
+    "moment": "^2.29.4",
     "next": "12.3.1",
+    "papaparse": "^5.3.2",
     "prettier": "^2.7.1",
+    "prop-types": "^15.8.1",
     "react": "18.2.0",
+    "react-bootstrap": "^2.5.0",
     "react-dom": "18.2.0",
     "sass": "^1.55.0"
   },
