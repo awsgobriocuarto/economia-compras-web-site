@@ -1,13 +1,13 @@
-import ListOfBanners from '@components/ListOfBanners';
-import getListItems from '@services/getListItems';
+import DownloadItemGroup from '@components/DownloadItemGroup';
+import fetchNormatives from '@services/fetchNormatives';
 
 export default function Normativa({ items }) {
   return (
     <section>
       <div className="container">
         <h1>Normativa</h1>
-        <div className="row mb-5">
-          <ListOfBanners items={items} />
+        <div className="downloads">
+          <DownloadItemGroup items={items} />
         </div>
       </div>
     </section>
@@ -15,9 +15,8 @@ export default function Normativa({ items }) {
 }
 
 export async function getStaticProps() {
-  const url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQa6arjSPTARv_IvyKV7idSiLjb0DnOx48ewD0qvwuRlxEuu86yDYYdfn1aENbhj0ooIk9gsCoSL4d2/pub?output=csv';
-  const response = await getListItems.list({ url });
-  const items = response.filter((i) => i.page.toLowerCase().includes('normativa'));
+  const response = await fetchNormatives.list();
+  const items = response;
   return {
     props: {
       items,

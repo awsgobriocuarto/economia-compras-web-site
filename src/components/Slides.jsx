@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { useSlides } from 'hooks/useSlides';
 import Link from 'next/link';
 import { Placeholder } from 'react-bootstrap';
@@ -5,7 +6,7 @@ import Carousel from 'react-bootstrap/Carousel';
 
 function Slides() {
   const { slides, loading } = useSlides();
-  // console.log(slides);
+
   return (
     <>
       {loading ? (
@@ -31,8 +32,10 @@ function Slides() {
               <Carousel.Caption>
                 <h3 className="text-white">{slide.title}</h3>
                 <p>{slide.summary}</p>
-                <Link href="/normativa">
-                  <a className="btn btn-primary mt-1 mb-3">Ver más</a>
+                <Link href={slide.href}>
+                  <a target={slide.link_type} rel={slide.link_type === '_blank' ? 'noopener noreferrer' : ''} className="btn btn-primary mt-1 mb-3">
+                    Ver más
+                  </a>
                 </Link>
               </Carousel.Caption>
             </Carousel.Item>

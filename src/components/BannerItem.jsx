@@ -19,7 +19,16 @@ export default function BannerItem({ item }) {
           <div className="icon">
             <i className={`fas fa-2x ${item.iconUrl}`}></i>
           </div>
-          <p>{item.title}</p>
+          <p>
+            {item.title}{' '}
+            {item.urlExternal ? (
+              <span>
+                <i className="fa-solid fa-link"></i>
+              </span>
+            ) : (
+              ''
+            )}
+          </p>
         </div>
       </a>
     </Link>

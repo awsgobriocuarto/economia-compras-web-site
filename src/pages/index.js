@@ -1,12 +1,14 @@
+import Head from 'next/head';
 import CtaProvider from '@components/CtaProvider';
 import ListOfBanners from '@components/ListOfBanners';
+import NextOpening from '@components/NextOpening';
 import PostsLatest from '@components/PostsLatest';
 import Slides from '@components/Slides';
 import getListItems from '@services/getListItems';
-import Head from 'next/head';
+import Contact from '@components/Contact';
 
 export default function Home({ items }) {
-  //console.log(items);
+  // console.log(items);
   return (
     <>
       <Head>
@@ -19,26 +21,23 @@ export default function Home({ items }) {
         <CtaProvider />
       </div>
       <PostsLatest limit={4} />
-      <div className="bg-light text-center py-5 mb-5">
-        <div className="container">
-          <h3>contacto</h3>
-          <p className="lead mb-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt, laborum.</p>
-        </div>
-      </div>
-      <div className="bg-light text-center py-5">
-        <div className="container">
-          <h3>Próximas Aperturas</h3>
-          <p className="lead mb-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et, corporis.</p>
-        </div>
-      </div>
+      <NextOpening />
+      <Contact />
     </>
   );
 }
 
 export async function getStaticProps() {
   const url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQa6arjSPTARv_IvyKV7idSiLjb0DnOx48ewD0qvwuRlxEuu86yDYYdfn1aENbhj0ooIk9gsCoSL4d2/pub?output=csv';
+
   const response = await getListItems.list({ url });
   const items = response.filter((i) => i.page.toLowerCase().includes('home'));
+
+  // const sheetId = '1i8V1Umifjucb_qCcipGRlghDnB-LFPkst8P0B81w5Iw';
+  // const sheet = 'Data2';
+
+  // const foo = await getSheetData({ sheetId, sheet });
+
   return {
     props: {
       items,

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { useRouter } from 'next/router';
 import useSinglePost from 'hooks/useSinglePost';
 import PostGallery from '@components/PostGallery';

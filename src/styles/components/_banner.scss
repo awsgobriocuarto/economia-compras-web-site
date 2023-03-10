@@ -51,6 +51,14 @@
       font-weight: 500;
       font-size: 1.2rem;
       letter-spacing: -0.04rem;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      span {
+        color: $gray-400;
+        scale: 0.8;
+      }
     }
   }
 }

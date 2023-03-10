@@ -12,7 +12,9 @@ const fromApiResponseToPosts = (apiResponse) => {
 };
 
 export function getPosts({ page = 1, limit = 8 } = {}) {
-  const apiURL = page ? `https://contenidos.gobiernoriocuarto.gob.ar/api/v1/posts?limit=${limit}&page=${page}` : `https://contenidos.gobiernoriocuarto.gob.ar/api/v1/posts?limit=${limit}`;
+  const apiURL = page
+    ? `https://contenidos.gobiernoriocuarto.gob.ar/api/v1/posts?category=13&limit=${limit}&page=${page}`
+    : `https://contenidos.gobiernoriocuarto.gob.ar/api/v1/posts?category=13&limit=${limit}`;
   return fetch(apiURL, {
     headers: {
       'Portal-Id': 3,

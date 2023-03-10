@@ -7,9 +7,7 @@ export default function Proveedores({ items }) {
     <section>
       <div className="container">
         <h1>Proveedores</h1>
-        <div className="row">
-          <ListOfBanners items={items} />
-        </div>
+        <ListOfBanners items={items} />
         <CtaProvider />
       </div>
     </section>
