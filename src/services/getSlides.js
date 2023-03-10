@@ -23,7 +23,7 @@ const fromApiResponseToSlides = (apiResponse) => {
 };
 
 export function getSlides() {
-  const apiURL = `https://contenidos.gobiernoriocuarto.gob.ar/api/v1/placements/1/banners`;
+  const apiURL = `https://contenidos.gobiernoriocuarto.gob.ar/api/v1/placements/10/banners`;
   return fetch(apiURL, {
     headers: {
       'Portal-Id': 3,

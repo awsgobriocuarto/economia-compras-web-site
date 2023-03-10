@@ -1,0 +1,29 @@
+.openings {
+  padding: 60px 0;
+  .card {
+    margin-bottom: 20px;
+    &-body {
+      padding-top: 20px;
+    }
+    &-title {
+      line-height: 1.3rem;
+      // text-transform: lowercase;
+      color: $secondary;
+      &::first-letter {
+        // text-transform: uppercase;
+      }
+    }
+    .list-group {
+      &-item {
+        //text-transform: uppercase;
+        font-size: 0.86rem;
+        color: $gray-700;
+
+        b {
+          color: $gray-900;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
