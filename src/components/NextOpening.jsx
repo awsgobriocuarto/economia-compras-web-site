@@ -7,14 +7,13 @@ import Link from 'next/link';
 
 const today = moment().format('YYYY-MM-DD');
 
-export default function NextOpening() {
+export default function NextOpening({ title = true, text = 'Economia', urlStatus = true, url = '/proveedores/registro', urlText = 'registrate aca' }) {
   const { loading, openings } = useNextOpening();
-  console.log(openings.length);
   return (
     <div className="openings">
       <div className="container">
-        <h3 className="text-center mb-3">Subasta Pública Inversa</h3>
-        <h5 className="text-center text-uppercase mb-5">- Próximas Aperturas -</h5>
+        {title ? <h3 className="mb-3">{text}</h3> : ''}
+        <h5 className="text-uppercase mb-5">Próximas Aperturas</h5>
         <div className="row">
           {loading ? (
             <div className="col-12">
@@ -33,13 +32,13 @@ export default function NextOpening() {
                   </div>
                 );
               })}
-              <div className="text-center pt-3">
-                Si sos proveedor de la municipaidad podes{' '}
-                <a href="https://www.seitrasus.com/#!/login" target="_blank" rel="noopener noreferrer">
-                  participar ahora
-                </a>{' '}
-                de la subasta, si aún no lo sos podes <Link href={'/proveedores/registro'}>registrarte acá</Link> de manera muy fácil.
-              </div>
+              {urlStatus ? (
+                <div className="pt-3">
+                  Para participar <Link href={url}>{urlText}</Link>.
+                </div>
+              ) : (
+                ''
+              )}
             </>
           )}
         </div>

@@ -17,9 +17,9 @@ export default function PostsLatest({ limit }) {
   }
 
   return (
-    <section className="posts">
+    <section className="posts latest">
       <div className="container">
-        <h3>novedades</h3>
+        <h3 className="mb-5">novedades</h3>
         <div className="row">
           {loading ? (
             <>
@@ -36,11 +36,15 @@ export default function PostsLatest({ limit }) {
             </>
           )}
         </div>
-        <div className="text-center">
-          <Link href="/novedades">
-            <a className="btn btn-sm btn-primary text-white">ver más noticias</a>
-          </Link>
-        </div>
+        {posts.length > 4 ? (
+          <div className="">
+            <Link href="/novedades">
+              <a className="btn btn-sm btn-primary text-white">ver más noticias</a>
+            </Link>
+          </div>
+        ) : (
+          ''
+        )}
       </div>
     </section>
   );

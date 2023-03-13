@@ -94,7 +94,7 @@ export default function ProviderRegisterForm() {
       </div>
       <div className="row">
         <div className="col-md-6">
-          <b>Indica tu situaciòn</b>
+          <b>Indica tu situación</b>
           <div className="mb-3">
             <div className="form-check">
               <input onChange={handleInputChange} className="form-check-input" type="radio" name="type" value="general" id="type1" checked={type === 'general' ? true : false} required />

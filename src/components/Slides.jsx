@@ -30,7 +30,7 @@ function Slides() {
             <Carousel.Item key={slide.id}>
               <img src={slide.file} alt={slide.title} className="carousel-img" />
               <Carousel.Caption>
-                <h3 className="text-white">{slide.title}</h3>
+                <h3>{slide.title}</h3>
                 <p>{slide.summary}</p>
                 <Link href={slide.href}>
                   <a target={slide.link_type} rel={slide.link_type === '_blank' ? 'noopener noreferrer' : ''} className="btn btn-primary mt-1 mb-3">

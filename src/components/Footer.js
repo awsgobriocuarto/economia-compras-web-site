@@ -22,15 +22,9 @@ export default function Footer() {
         <div>
           <h6>Whatsapp</h6>
           <p>
-            <a href="https://wa.me/+5493584121879" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/+5493584901928" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-fw fa-whatsapp"></i>
-              <span>+54 9 358 412 1879</span>
-            </a>
-          </p>
-          <p>
-            <a href="https://wa.me/+5493585148212" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-fw fa-whatsapp"></i>
-              <span>+54 9 358 514 8212</span>
+              <span>+54 9 358 490 1928</span>
             </a>
           </p>
         </div>

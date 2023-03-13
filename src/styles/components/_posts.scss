@@ -1,5 +1,9 @@
 .posts {
   position: relative;
+  &.latest {
+    background-color: $gray-200;
+    padding: 80px 0;
+  }
   .card {
     margin-bottom: 30px;
     text-align: left;
