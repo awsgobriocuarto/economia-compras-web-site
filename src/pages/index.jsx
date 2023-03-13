@@ -21,7 +21,7 @@ export default function Home({ items }) {
       </div>
       <ListOfBanners items={items} />
       <NextOpening title={true} text="Subasta Pública" url="/cotizaciones-y-concursos/concurso-de-precios" urlText="Ingresá acá" />
-      <NextOpening title={true} text="Consurso de Precios" url="/cotizaciones-y-concursos/subasta-publica" urlText="Ingresá acá" />
+      <NextOpening title={true} text="Concurso de Precios" url="/cotizaciones-y-concursos/subasta-publica" urlText="Ingresá acá" />
       <PostsLatest limit={4} />
       <Contact />
     </>
