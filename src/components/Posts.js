@@ -10,18 +10,11 @@ export default function Posts({ limit }) {
     setPage((prevPage) => prevPage + 1);
   };
 
-  // if (posts?.length == 0) {
-  //   return '';
-  // }
-
   return (
     <section className="posts">
       <div className="row">
         {loading ? (
           <>
-            <PostCardPlaceholder />
-            <PostCardPlaceholder />
-            <PostCardPlaceholder />
             <PostCardPlaceholder />
           </>
         ) : (
@@ -33,12 +26,16 @@ export default function Posts({ limit }) {
         )}
       </div>
       <div className="text-center">
-        {loadingNextPage ? (
-          <Spinner />
+        {posts.length > 4 ? (
+          loadingNextPage ? (
+            <Spinner />
+          ) : (
+            <button onClick={handleNextPage} className="btn btn-sm btn-primary text-white">
+              Cargar mas noticias
+            </button>
+          )
         ) : (
-          <button onClick={handleNextPage} className="btn btn-sm btn-primary text-white">
-            Cargar mas noticias
-          </button>
+          ''
         )}
       </div>
     </section>

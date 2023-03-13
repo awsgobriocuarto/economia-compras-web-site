@@ -4,7 +4,7 @@
   z-index: 9999;
   .navbar-brand {
     padding: 0;
-    width: 180px;
+    width: 350px;
     line-height: 0;
   }
   .navbar-toggler {
@@ -50,7 +50,7 @@
 @media (max-width: 767px) {
   .navbar {
     .navbar-brand {
-      width: 160px;
+      width: 260px;
     }
   }
 }

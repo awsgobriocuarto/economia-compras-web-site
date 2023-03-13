@@ -1,3 +1,4 @@
+import Contact from '@components/Contact';
 import ProviderRegisterForm from '@components/ProviderRegisterForm';
 
 export default function Registro() {
@@ -18,12 +19,13 @@ export default function Registro() {
           <div className="col-md-6">
             <div className="card">
               <div className="card-body">
-                <h5 className="mb-3">Iniciar Registro</h5>
+                <h5 className="mb-3">Solictá más información</h5>
                 <ProviderRegisterForm />
               </div>
             </div>
           </div>
         </div>
+        <Contact />
       </div>
     </section>
   );

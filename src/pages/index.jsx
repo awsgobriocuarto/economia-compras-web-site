@@ -16,12 +16,13 @@ export default function Home({ items }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Slides />
-      <ListOfBanners items={items} />
       <div className="container">
         <CtaProvider />
       </div>
+      <ListOfBanners items={items} />
+      <NextOpening title={true} text="Subasta Pública" url="/cotizaciones-y-concursos/concurso-de-precios" urlText="Ingresá acá" />
+      <NextOpening title={true} text="Consurso de Precios" url="/cotizaciones-y-concursos/subasta-publica" urlText="Ingresá acá" />
       <PostsLatest limit={4} />
-      <NextOpening />
       <Contact />
     </>
   );

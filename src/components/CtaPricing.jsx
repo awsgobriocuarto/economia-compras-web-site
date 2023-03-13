@@ -1,14 +1,18 @@
+import Link from 'next/link';
+
 export default function CtaPricing() {
   return (
     <div className="cta secondary">
       <div>
         <h3 className="mb-3 mb-sm-0">¿Querés participar?</h3>
-        <p className="lead d-none d-sm-block">Para participar debes ser proveedor de la municipalidad, si aún no sos proveedor registrate ahora</p>
+        <p className="lead">
+          Registrate a nuestra red de proveedores y participá en los <b>Concursos de Precios</b> y <b>Subastas Públicas</b>
+        </p>
       </div>
       <div>
-        <a className="btn btn-primary text-white text-uppercase" href="http://cidi.riocuarto.gov.ar/" target="_blank" rel="noopener noreferrer">
-          Registrate Ahora
-        </a>
+        <Link href="/proveedores/registro">
+          <a className="btn btn-primary text-white text-uppercase">Registrate Ahora</a>
+        </Link>
       </div>
     </div>
   );

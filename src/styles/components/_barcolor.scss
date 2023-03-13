@@ -25,9 +25,17 @@
   background-color: $green;
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 767px) {
   .barcolor {
-    top: 83px;
+    top: 72px;
+  }
+  .barcolor .item {
+    height: 4px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .barcolor {
+    top: 100px;
   }
   .barcolor .item {
     height: 4px;

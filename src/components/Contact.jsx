@@ -9,9 +9,9 @@ const contacts = [
   },
   {
     title: 'Subdirección de Compras, Contrataciones y Patrominio',
-    phone: '(0358) 476 8490 | Interno. 320',
-    whatsapp: '+54 358 490 1928',
-    email: 'proveedores@riocuarto.gov.ar',
+    phone: '',
+    whatsapp: '+54 9 358 490 1928',
+    email: '',
   },
   {
     title: 'Subsecretaría de Obras e Infraestructura',
@@ -21,9 +21,9 @@ const contacts = [
   },
   {
     title: 'Ente de Prevención Ciudadana y Gestión Ambiental',
-    phone: '(0358) 476 8460 | Interno 607/621',
-    whatsapp: '+54 358 411 2577',
-    email: 'admenteprevencion@riocuarto.gov.ar',
+    phone: '',
+    whatsapp: '+54 9 358 411 2577',
+    email: '',
   },
 ];
 
@@ -31,7 +31,7 @@ export default function Contact() {
   return (
     <div className="contact">
       <div className="container">
-        <h3 className="text-center mb-5">contactos</h3>
+        <h3 className="mb-5">contactos</h3>
         <div className="row">
           {contacts.map((contact) => (
             <div className="col-md-6" key={contact.title}>
