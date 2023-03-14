@@ -8,7 +8,7 @@ const contacts = [
     email: 'proveedores@riocuarto.gov.ar',
   },
   {
-    title: 'Subdirección de Compras, Contrataciones y Patrominio',
+    title: 'Subdirección de Compras, Contrataciones y Patrimonio',
     phone: '',
     whatsapp: '+54 9 358 490 1928',
     email: '',
