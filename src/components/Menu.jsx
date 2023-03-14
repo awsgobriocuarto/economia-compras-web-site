@@ -38,7 +38,7 @@ function Menu() {
             <Link href="/" passHref>
               <Nav.Link active={router.pathname === 'home'}>Home</Nav.Link>
             </Link>
-            <NavDropdown title="Cotizaciones y Concursos" id="basic-nav-dropdown">
+            <NavDropdown title="Cotizaciones" id="basic-nav-dropdown">
               <NavDropdown.Item href="/cotizaciones-y-concursos">Descripcion General</NavDropdown.Item>
               <NavDropdown.Item href="/cotizaciones-y-concursos/concurso-de-precios">Concurso de Precios</NavDropdown.Item>
               <NavDropdown.Item href="/cotizaciones-y-concursos/subasta-publica">Subasta Pública</NavDropdown.Item>
