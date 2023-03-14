@@ -1,3 +1,10 @@
+const today = Date.now();
+
+function dateFilter(date) {
+  const expirationDate = Date.parse(date.expiration);
+  return expirationDate >= today;
+}
+
 const fromApiResponseToNextOpening = (apiResponse) => {
   const data = apiResponse;
   if (Array.isArray(data)) {
@@ -22,9 +29,11 @@ const fromApiResponseToNextOpening = (apiResponse) => {
     openings.sort(function (a, b) {
       return new Date(a.start_date) - new Date(b.start_date);
     });
-    //console.log(openings);
 
-    return openings;
+    // filter openings by date
+    const filteredOpeningsByDate = openings.filter(dateFilter);
+
+    return filteredOpeningsByDate;
   }
   return [];
 };
