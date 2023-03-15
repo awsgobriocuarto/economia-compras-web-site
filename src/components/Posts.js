@@ -16,6 +16,9 @@ export default function Posts({ limit }) {
         {loading ? (
           <>
             <PostCardPlaceholder />
+            <PostCardPlaceholder />
+            <PostCardPlaceholder />
+            <PostCardPlaceholder />
           </>
         ) : (
           <>

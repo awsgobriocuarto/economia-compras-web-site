@@ -23,9 +23,7 @@ async function emailHandler(req, res) {
             </body>  
           </html>`,
       },
-      recipients: [{ address: 'gsayago@riocuarto.gov.ar' }, { address: 'iterzaghi@riocuarto.gov.ar' }],
-      // recipients: [{ address: 'gsayago@riocuarto.gov.ar' }, { address: email }, { address: '1uuvemwut1vjacusan8wl1tckhevklcy@hook.us1.make.com' }],
-      // recipients: [{ address: '1uuvemwut1vjacusan8wl1tckhevklcy@hook.us1.make.com' }],
+      recipients: [{ address: 'gsayago@riocuarto.gov.ar' }, { address: 'proveedores@riocuarto.gov.ar' }],
     })
     .then(() => {
       res.statusCode = 200;

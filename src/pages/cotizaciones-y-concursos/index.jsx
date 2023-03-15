@@ -18,7 +18,7 @@ export default function CotizacionesConcursos() {
   return (
     <section>
       <div className="container">
-        <h1 className="mb-5">Cotizaciones y Concursos</h1>
+        <h1 className="mb-5">Cotizaciones</h1>
         <div className="row mb-5">
           <div className="col-md-4 mb-5 mb-sm-0">
             <BannerItem item={itemConcursoDePrecios} col="col-md-2" />
