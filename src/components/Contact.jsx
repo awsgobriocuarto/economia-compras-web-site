@@ -9,9 +9,9 @@ const contacts = [
   },
   {
     title: 'Subdirección de Compras, Contrataciones y Patrimonio',
-    phone: '',
+    phone: '(0358) 476 8490 | Interno 320',
     whatsapp: '+54 9 358 490 1928',
-    email: '',
+    email: 'proveedores@riocuarto.gov.ar',
   },
   {
     title: 'Subsecretaría de Obras e Infraestructura',
@@ -21,9 +21,9 @@ const contacts = [
   },
   {
     title: 'Ente de Prevención Ciudadana y Gestión Ambiental',
-    phone: '',
+    phone: '(0358) 476 8460 | Interno 607/621',
     whatsapp: '+54 9 358 411 2577',
-    email: '',
+    email: 'admenteprevencion@riocuarto.gov.ar',
   },
 ];
 
