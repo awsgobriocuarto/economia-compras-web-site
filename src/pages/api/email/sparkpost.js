@@ -1,8 +1,7 @@
 const SparkPost = require('sparkpost');
 
 async function emailHandler(req, res) {
-  const client = new SparkPost('4a234cb3191c56354c74978ce01da942589003a6');
-  // const client = new SparkPost(process.env.SPARKPOST_API_KEY);
+  const client = new SparkPost(process.env.SPARKPOST_API_KEY);
   const data = JSON.parse(req.body);
   const { fname, lname, email, type } = data;
 
