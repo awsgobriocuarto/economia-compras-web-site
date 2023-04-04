@@ -49,12 +49,9 @@ function Menu() {
             ))}
             <Link href={process.env.NODE_ENV == 'development' ? 'http://localhost:3001' : 'https://economiariocuarto.gob.ar/'} passHref>
               <Nav.Link className="special">
-                Economía <i class="fas fa-sign-out-alt"></i>
+                Economía <i className="fas fa-sign-out-alt"></i>
               </Nav.Link>
             </Link>
-            {/* <a className="nav-link" href="https://economiariocuarto.gob.ar/" target="_blank" rel="noopener noreferrer">
-              Economia
-            </a> */}
           </Nav>
         </Navbar.Collapse>
       </Container>
