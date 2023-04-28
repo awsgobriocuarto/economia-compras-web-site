@@ -1,6 +1,7 @@
 import CtaPricing from '@components/CtaPricing';
 import ListOfBanners from '@components/ListOfBanners';
-// import NextOpening from '@components/NextOpening';
+import NextPriceContest from '@components/NextPriceContest';
+
 import getListItems from '@services/getListItems';
 
 export default function ConsursoDePrecios({ items }) {
@@ -21,7 +22,7 @@ export default function ConsursoDePrecios({ items }) {
             <ListOfBanners items={items} col="col-md-12" />
           </div>
         </div>
-        {/* <NextOpening title={true} text="Consurso de Precios" urlStatus={false} /> */}
+        <NextPriceContest />
         <CtaPricing />
       </div>
     </section>

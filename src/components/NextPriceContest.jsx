@@ -1,21 +1,22 @@
-
 import Spinner from './Spinner';
-import { useNextOpening } from 'hooks/useNextOpening';
-import NextOpeningCard from './NextOpeningCard';
+// import { useNextOpening } from 'hooks/useNextOpening';
+import NextPriceContestCard from './NextPriceContestCard';
 import Link from 'next/link';
 
 import moment from 'moment';
+import { useNextPriceContest } from 'hooks/useNextPriceContest';
 
 const today = moment().format('YYYY-MM-DD');
 
-export default function NextOpening({ title = true, text = 'Economia', urlStatus = true, url = '/proveedores/registro', urlText = 'registrate aca' }) {
-  const { loading, openings } = useNextOpening();
+export default function NextPriceContest({ title = true, text = 'Economia', urlStatus = true, url = '/proveedores/registro', urlText = 'registrate aca' }) {
+  // const { loading, openings } = useNextOpening();
+  const { loading, openings } = useNextPriceContest();
 
   return (
     <div className="openings">
       <div className="container">
         {title ? <h3 className="mb-3">{text}</h3> : ''}
-        <h5 className="text-uppercase mb-4">Próximas Aperturas</h5>
+        <h5 className="text-uppercase mb-4">Concurso de Precios Vigentes</h5>
         <div className="row">
           {loading ? (
             <div className="col-12">
@@ -23,20 +24,20 @@ export default function NextOpening({ title = true, text = 'Economia', urlStatus
             </div>
           ) : (
             <>
-              {openings.length == 0 ? (
+              {openings?.length == 0 ? (
                 <div className="col-12">
                   <div className="alert alert-primary">No hay registros publicados</div>
                 </div>
               ) : (
                 <>
-                  {openings.map((opening) => {
-                    const expirated = moment(opening.expiration).format('YYYY-MM-DD');
-                    if (today > expirated) {
-                      return null;
-                    }
+                  {openings?.map((opening) => {
+                    // const expirated = moment(opening.expiration).format('YYYY-MM-DD');
+                    // if (today > expirated) {
+                    //   return null;
+                    // }
                     return (
                       <div key={opening.id} className="col-md-4">
-                        <NextOpeningCard {...opening} />
+                        <NextPriceContestCard opening={opening} />
                       </div>
                     );
                   })}
