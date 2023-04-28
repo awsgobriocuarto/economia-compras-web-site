@@ -1,4 +1,3 @@
-
 import Spinner from './Spinner';
 import { useNextOpening } from 'hooks/useNextOpening';
 import NextOpeningCard from './NextOpeningCard';

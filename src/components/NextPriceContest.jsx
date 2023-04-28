@@ -1,12 +1,11 @@
 import Spinner from './Spinner';
-// import { useNextOpening } from 'hooks/useNextOpening';
 import NextPriceContestCard from './NextPriceContestCard';
 import Link from 'next/link';
 
-import moment from 'moment';
+//import moment from 'moment';
 import { useNextPriceContest } from 'hooks/useNextPriceContest';
 
-const today = moment().format('YYYY-MM-DD');
+//const today = moment().format('YYYY-MM-DD');
 
 export default function NextPriceContest({ title = true, text = 'Economia', urlStatus = true, url = '/proveedores/registro', urlText = 'registrate aca' }) {
   // const { loading, openings } = useNextOpening();

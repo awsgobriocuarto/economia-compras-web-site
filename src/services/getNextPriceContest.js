@@ -4,7 +4,7 @@ const fromApiResponse = (apiResponse) => {
   if (Array.isArray(data)) {
     const contests = data.map((item) => {
       return {
-        ...item
+        ...item,
       };
     });
     return contests;
