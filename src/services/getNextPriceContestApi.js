@@ -6,9 +6,11 @@ const fromApiResponse = (apiResponse) => {
   if (Array.isArray(data)) {
     const contests = data.map((item) => {
       return {
-        ...item,
-        // 'comprobante': item.Comprobante,
-        // 'date': item.Concepto Publicación,
+        // ...item,
+        comprobante: item.Comprobante,
+        concepto: item.conceptoPublicacion,
+        area: item.descripcionArea,
+        fecha: item.fechaApertura,
       };
     });
     return contests;
