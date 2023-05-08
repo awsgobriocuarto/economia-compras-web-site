@@ -21,7 +21,7 @@ export default function SubastaPublica({ items }) {
             <ListOfBanners items={items} col="col-md-12" />
           </div>
         </div>
-        <NextOpening title={false} text="Subasta Pública" urlStatus={false} />
+        <NextOpening />
         <CtaPricing />
       </div>
     </section>

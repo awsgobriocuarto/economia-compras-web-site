@@ -6,6 +6,7 @@ import PostsLatest from '@components/PostsLatest';
 import Slides from '@components/Slides';
 import getListItems from '@services/getListItems';
 import Contact from '@components/Contact';
+import NextPriceContest from '@components/NextPriceContest';
 
 export default function Home({ items }) {
   // console.log(items);
@@ -22,7 +23,8 @@ export default function Home({ items }) {
       <div className="pt-4">
         <ListOfBanners items={items} />
       </div>
-      <NextOpening title={true} text="Subasta Pública" url="/cotizaciones-y-concursos/subasta-publica" urlText="ingresá acá" />
+      <NextOpening limit={3} title={true} btnMoreStatus={true} urlRegisterStatus={true} />
+      <NextPriceContest limit={3} title={true} btnMoreStatus={true} urlRegisterStatus={true} />
       <PostsLatest limit={4} />
       <Contact />
     </>

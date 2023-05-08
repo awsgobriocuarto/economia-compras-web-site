@@ -2,19 +2,15 @@ import Spinner from './Spinner';
 import NextPriceContestCard from './NextPriceContestCard';
 import Link from 'next/link';
 
-//import moment from 'moment';
 import { useNextPriceContest } from 'hooks/useNextPriceContest';
 
-//const today = moment().format('YYYY-MM-DD');
-
-export default function NextPriceContest({ title = true, text = 'Economia', urlStatus = true, url = '/proveedores/registro', urlText = 'registrate aca' }) {
-  // const { loading, openings } = useNextOpening();
+export default function NextPriceContest({ title = false, urlRegisterStatus = false, btnMoreStatus = false, limit = false }) {
   const { loading, openings } = useNextPriceContest();
 
   return (
     <div className="openings">
       <div className="container">
-        {title ? <h3 className="mb-3">{text}</h3> : ''}
+        {title ? <h3 className="mb-3">Concurso de Precios</h3> : ''}
         <h5 className="text-uppercase mb-4">Concurso de Precios Vigentes</h5>
         <div className="row">
           {loading ? (
@@ -29,20 +25,25 @@ export default function NextPriceContest({ title = true, text = 'Economia', urlS
                 </div>
               ) : (
                 <>
-                  {openings?.map((opening) => {
-                    // const expirated = moment(opening.expiration).format('YYYY-MM-DD');
-                    // if (today > expirated) {
-                    //   return null;
-                    // }
+                  {openings.slice(0, limit ? limit : openings.length)?.map((opening) => {
                     return (
                       <div key={opening.id} className="col-md-4">
                         <NextPriceContestCard opening={opening} />
                       </div>
                     );
                   })}
-                  {urlStatus ? (
+                  {openings.length > 3 && btnMoreStatus ? (
                     <div className="pt-3">
-                      Para participar <Link href={url}>{urlText}</Link>.
+                      <Link href="/cotizaciones-y-concursos/concurso-de-precios">
+                        <a className="btn btn-sm btn-primary text-white">Ver más</a>
+                      </Link>
+                    </div>
+                  ) : (
+                    ''
+                  )}
+                  {urlRegisterStatus ? (
+                    <div className="pt-3">
+                      ¿Querés participar? <Link href="/cotizaciones-y-concursos/concurso-de-precios">Ingresa acá</Link>
                     </div>
                   ) : (
                     ''

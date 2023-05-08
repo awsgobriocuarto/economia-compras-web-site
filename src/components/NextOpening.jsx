@@ -7,13 +7,13 @@ import moment from 'moment';
 
 const today = moment().format('YYYY-MM-DD');
 
-export default function NextOpening({ title = true, text = 'Economia', urlStatus = true, url = '/proveedores/registro', urlText = 'registrate aca' }) {
+export default function NextOpening({ title = false, urlRegisterStatus = false, btnMoreStatus = false, limit = false }) {
   const { loading, openings } = useNextOpening();
 
   return (
     <div className="openings">
       <div className="container">
-        {title ? <h3 className="mb-3">{text}</h3> : ''}
+        {title ? <h3 className="mb-3">Subasta Pública</h3> : ''}
         <h5 className="text-uppercase mb-4">Próximas Aperturas</h5>
         <div className="row">
           {loading ? (
@@ -22,13 +22,13 @@ export default function NextOpening({ title = true, text = 'Economia', urlStatus
             </div>
           ) : (
             <>
-              {openings.length == 0 ? (
+              {openings?.length == 0 ? (
                 <div className="col-12">
                   <div className="alert alert-primary">No hay registros publicados</div>
                 </div>
               ) : (
                 <>
-                  {openings.map((opening) => {
+                  {openings.slice(0, limit ? limit : openings.length).map((opening) => {
                     const expirated = moment(opening.expiration).format('YYYY-MM-DD');
                     if (today > expirated) {
                       return null;
@@ -39,9 +39,18 @@ export default function NextOpening({ title = true, text = 'Economia', urlStatus
                       </div>
                     );
                   })}
-                  {urlStatus ? (
+                  {openings.length > 3 && btnMoreStatus ? (
                     <div className="pt-3">
-                      Para participar <Link href={url}>{urlText}</Link>.
+                      <Link href="/cotizaciones-y-concursos/subasta-publica">
+                        <a className="btn btn-sm btn-primary text-white">Ver más</a>
+                      </Link>
+                    </div>
+                  ) : (
+                    ''
+                  )}
+                  {urlRegisterStatus ? (
+                    <div className="pt-3">
+                      ¿Querés participar? <Link href="/cotizaciones-y-concursos/subasta-publica">Ingresa acá</Link>
                     </div>
                   ) : (
                     ''
