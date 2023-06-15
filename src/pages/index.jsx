@@ -7,6 +7,7 @@ import Slides from '@components/Slides';
 import getListItems from '@services/getListItems';
 import Contact from '@components/Contact';
 import NextPriceContest from '@components/NextPriceContest';
+import CtaSuggestions from '@components/CtaSuggestions';
 
 export default function Home({ items }) {
   // console.log(items);
@@ -25,6 +26,9 @@ export default function Home({ items }) {
       </div>
       <NextOpening limit={3} title={true} btnMoreStatus={true} urlRegisterStatus={true} />
       <NextPriceContest limit={3} title={true} btnMoreStatus={true} urlRegisterStatus={true} />
+      <div className="container">
+        <CtaSuggestions />
+      </div>
       <PostsLatest limit={4} />
       <Contact />
     </>
