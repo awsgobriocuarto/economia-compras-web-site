@@ -27,12 +27,6 @@ export default function Footer() {
               <span>+54 9 358 490 1928</span>
             </a>
           </p>
-          <p>
-            <a href="https://wa.me/+5493584112577" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-fw fa-whatsapp"></i>
-              <span>+54 9 358 411 2577</span>
-            </a>
-          </p>
         </div>
         <ul>
           <li>
