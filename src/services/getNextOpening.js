@@ -30,6 +30,8 @@ const fromApiResponseToNextOpening = (apiResponse) => {
       return new Date(a.start_date) - new Date(b.start_date);
     });
 
+    console.log(openings);
+
     // filter openings by date
     const filteredOpeningsByDate = openings.filter(dateFilter);
 
@@ -39,7 +41,7 @@ const fromApiResponseToNextOpening = (apiResponse) => {
 };
 
 export async function getNextOpening() {
-  const apiURL = `https://www.seitrasus.com/subastasapi/api/Cotizaciones/Buscar?IdVigencia=209&Nro=&codigoJur=10&fechaI=&fechaF=&NroExpte=`;
+  const apiURL = `https://www.seitrasus.com/subastasapi/api/Cotizaciones/Buscar?IdVigencia=210&Nro=&codigoJur=10&fechaI=&fechaF=&NroExpte=`;
 
   // return await fetch(apiURL)
   //   .then((res) => res.json())
