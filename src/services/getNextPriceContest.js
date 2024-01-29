@@ -1,6 +1,6 @@
 const fromApiResponse = (apiResponse) => {
   const data = apiResponse;
-  console.log(data);
+  //console.log(data);
   if (Array.isArray(data)) {
     const contests = data.map((item) => {
       return {
