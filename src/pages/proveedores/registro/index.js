@@ -14,7 +14,7 @@ export default function Registro() {
               inscribirse en el Registro Municipal de Contratistas.
             </p>
             <p className="mb-4">La Secretaria de Economía ha establecido los requisitos y la documentación necesaria. </p>
-            <a href="https://forms.gle/YneQ6pLaUJcmPksw6" className="btn btn-secondary btn-lg mb-4" target="_blank" rel="noopener noreferrer">
+            <a href="https://tramitesdigitales.gobiernoriocuarto.gob.ar/tramites/tramite/8" className="btn btn-secondary btn-lg mb-4" target="_blank" rel="noopener noreferrer">
               Registrate Ahora <i className="fa-solid fa-angles-right"></i>
             </a>
             <p className="mb-4">Si querés conocer más, ingresa tus datos en el formulario y te contactaremos.</p>
