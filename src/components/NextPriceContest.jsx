@@ -6,6 +6,11 @@ import { useNextPriceContest } from 'hooks/useNextPriceContest';
 
 export default function NextPriceContest({ title = false, urlRegisterStatus = false, btnMoreStatus = false, limit = false }) {
   const { loading, openings } = useNextPriceContest();
+  console.log(openings?.length);
+
+  if (!openings) {
+    return '';
+  }
 
   return (
     <div className="openings">
@@ -25,14 +30,14 @@ export default function NextPriceContest({ title = false, urlRegisterStatus = fa
                 </div>
               ) : (
                 <>
-                  {openings.slice(0, limit ? limit : openings.length)?.map((opening) => {
+                  {openings?.slice(0, limit ? limit : openings.length)?.map((opening) => {
                     return (
                       <div key={opening.id} className="col-md-4">
                         <NextPriceContestCard opening={opening} />
                       </div>
                     );
                   })}
-                  {openings.length > 3 && btnMoreStatus ? (
+                  {openings?.length > 3 && btnMoreStatus ? (
                     <div className="pt-3">
                       <Link href="/cotizaciones-y-concursos/concurso-de-precios">
                         <a className="btn btn-sm btn-primary text-white">Ver más</a>

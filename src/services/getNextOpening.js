@@ -30,7 +30,7 @@ const fromApiResponseToNextOpening = (apiResponse) => {
       return new Date(a.start_date) - new Date(b.start_date);
     });
 
-    console.log(openings);
+    //console.log(openings);
 
     // filter openings by date
     const filteredOpeningsByDate = openings.filter(dateFilter);
