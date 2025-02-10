@@ -41,14 +41,7 @@ const fromApiResponseToNextOpening = (apiResponse) => {
 };
 
 export async function getNextOpening() {
-  const apiURL = `https://www.seitrasus.com/subastasapi/api/Cotizaciones/Buscar?IdVigencia=210&Nro=&codigoJur=10&fechaI=&fechaF=&NroExpte=`;
-
-  // return await fetch(apiURL)
-  //   .then((res) => res.json())
-  //   .then((response) => {
-  //     //console.log(response);
-  //     return response;
-  //   });
+  const apiURL = process.env.NEXT_PUBLIC_SUBASTA_TRASUS_API;
 
   return await fetch(apiURL)
     .then((res) => res.json())
